@@ -12,6 +12,11 @@ async fn count_to_ten_seconds(thread_num:usize) {
         // This is async sleep.
         // While thread is sleeping, other async tasks can be performed.
         sleep(Duration::from_millis( 1000 )).await;
+
+        // This is sync sleep
+        // Other tasks can not be performed while this
+        std::thread::sleep(Duration::from_millis(1000));
+
     }
 }
 
